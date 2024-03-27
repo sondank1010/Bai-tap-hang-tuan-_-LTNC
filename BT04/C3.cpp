@@ -1,33 +1,24 @@
 #include <iostream>
-#include <cstring>
+#include <cmath>
 using namespace std;
-bool palin(int n){
-    string s = to_string(n);
-    int len = s.length();
-    for(int i = 0 ; i < len / 2 ; i++){
-        if(s[i] != s[len - 1 - i] ){
-            return false;
+bool check(int n){
+    for(int i = 2 ;i  < sqrt(n); i++){
+        if(n % i == 0){
+            return false; 
+            
         }
     }
-    return true;
+    return n > 1; 
 }
-int countMirrorNumbers(int A, int B) {
-    int count = 0;
-    for (int num = A; num <= B; ++num) {
-        if (palin(num)) {
-            count++;
-        }
-    }
-    return count;
+int main(){
+
+    int n ;
+     cin >> n;
+     if(check(n) == 0){
+         cout << "no";
+         
+     }
+     else cout << " yes";
+     return 0;
 }
 
-int main(){
-    int t;
-    cin >> t;
-    for (int i = 0; i < t ; ++i){
-        int a, b;
-        cin >> a >> b;
-        cout << countMirrorNumbers(a, b) << endl;
-    }
-        return 0;
-    }
