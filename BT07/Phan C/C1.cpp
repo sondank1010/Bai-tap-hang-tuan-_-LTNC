@@ -10,12 +10,12 @@ int strlen(const char* str) {
 }
 
 
-void reverse(char a[]) {
+void reverse(char  a[]) {
     int length = strlen(a);
     for (int i = 0; i < length / 2; ++i) {
-        char temp = a[i];
-        a[i] = a[length - i - 1];
-        a[length - i - 1] = temp;
+        char temp = *(a + i);
+        *(a + i) = *(a + length - i - 1);
+        *(a + length - i - 1) = temp;
     }
 }
 
