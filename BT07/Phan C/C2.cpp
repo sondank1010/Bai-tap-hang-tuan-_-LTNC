@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-int strlen(const char* s) {
+int Strlen(const char* s) {
     int l = 0;
     while (s[l] != '\0') {
         l++;
@@ -10,7 +10,7 @@ int strlen(const char* s) {
 }
 
 void delete_char(char a[], char c) {
-    int length = strlen(a);
+    int length = Strlen(a);
     int j;
     for (int i = 0; i < length; i++) {
         while (*(a + i) == c) {
